@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/User" element={ <User /> } />
-          <Route path="/McDonalds" element={ <ContactList contacts={ contacts }/> } />
+          <Route path="/ContactList" element={ <ContactList contacts={ contacts }/> } />
           <Route path="/contacts" element={ <ContactList contacts={ contacts }/> } >
           <Route path=":contactId" element={ <ContactDetailView contacts={ contacts } /> } />
           </Route>
