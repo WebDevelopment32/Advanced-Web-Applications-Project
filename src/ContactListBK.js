@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-export default function ContactList(props) {
+export default function ContactListBK(props) {
     return (
         <div className="contactListView">
             <div className="contactList">
-            { props.contacts.map(contact =>
-                <Link to={ contact.id }>
-                <div className="contactListElement">{contact.tuote1}</div>
+            { props.contactsBK.map(contactBK =>
+                <Link to={ contactBK.id }>
+                <div className="contactListElement">{contactBK.tuote1}</div>
                 </Link>
             )}
             </div>

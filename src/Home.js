@@ -13,7 +13,7 @@ export default function Home() {
             </p>
             <p>
                 <Link to="/contacts"><button className="Nappi1">McDonalds</button></Link>
-                <Link to="/contacts"><button className="Nappi2">Burger King</button></Link>
+                <Link to="/contactsBK"><button className="Nappi2">Burger King</button></Link>
             </p>
         </div>
     )
