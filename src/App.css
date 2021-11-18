@@ -33,3 +33,31 @@
 .Nappi2 {
   margin-left: 10px;
 }
+
+.plus{
+  position: absolute;
+  right:    539px;
+  bottom:   30px;
+  font-size: 20px;
+}
+
+.minus{
+  position: absolute;
+  right:    250px;
+  bottom:   30px;
+  font-size: 20px;
+}
+
+.Tilaukseen {
+  position: absolute;
+  right:    30px;
+  bottom:   30px;
+  font-size: 20px;
+}
+
+.quantityScreen {
+  position: absolute;
+  right:    280px;
+  bottom:   30px;
+  font-size: 20px;
+}

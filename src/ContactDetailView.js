@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom'
 
 export default function ContactDetailView(props) {
 
+    function Tilaus() {
+        alert('Tuote lisätty ostoskoriin')
+        }
+
     const result = useParams();
     console.log(result);
 
@@ -26,6 +30,10 @@ export default function ContactDetailView(props) {
                 <tr>
                     <td>{contact.info4}</td>
                 </tr>
+                <button class="plus">+</button>
+                <input class="quantityScreen" type="number"></input>
+                <button class="minus">-</button>
+                <button class="Tilaukseen" onClick={Tilaus}>Lisää Tilaukseen</button>
             </table>
         </div>
     )

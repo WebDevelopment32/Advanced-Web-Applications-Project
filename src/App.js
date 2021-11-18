@@ -3,10 +3,13 @@ import Home from './Home';
 import User from './User';
 import ContactList from './ContactList';
 import ContactListBK from './ContactListBK';
+import ContactListHS from './ContactListHS';
 import ContactDetailView from './ContactDetailView';
 import ContactDetailViewBK from './ContactDetailViewBK';
+import ContactDetailViewHS from './ContactDetailViewHS';
 import ContactData from './data.json';
 import ContactDataBK from './dataBK.json';
+import ContactDataHS from './dataHS.json';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -18,6 +21,10 @@ function App() {
 
   const contactsBK = ContactDataBK.map(contactBK => {
     return { ...contactBK, id: uuidv4() }
+  })
+
+  const contactsHS = ContactDataHS.map(contactHS => {
+    return { ...contactHS, id: uuidv4() }
   })
 
   return (
@@ -37,6 +44,11 @@ function App() {
         <Routes>
           <Route path="/contactsBK" element={ <ContactListBK contactsBK={ contactsBK }/> } >
           <Route path=":contactIdBK" element={ <ContactDetailViewBK contactsBK={ contactsBK } /> } />
+          </Route>
+        </Routes>
+        <Routes>
+          <Route path="/contactsHS" element={ <ContactListHS contactsHS={ contactsHS }/> } >
+          <Route path=":contactIdHS" element={ <ContactDetailViewHS contactsHS={ contactsHS } /> } />
           </Route>
         </Routes>
       </div>

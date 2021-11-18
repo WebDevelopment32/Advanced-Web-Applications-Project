@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-export default function ContactDetailViewBK(props) {
+export default function ContactDetailViewHS(props) {
 
     function Tilaus() {
         alert('Tuote lisätty ostoskoriin')
@@ -10,8 +10,8 @@ export default function ContactDetailViewBK(props) {
     const result = useParams();
     console.log(result);
 
-    const contactBK = props.contactsBK.find(contactBK => contactBK.id === result.contactIdBK);
-    if(contactBK == null) {
+    const contactHS = props.contactsHS.find(contactHS => contactHS.id === result.contactIdHS);
+    if(contactHS == null) {
         return <div>No contact found</div>
     }
 
@@ -19,16 +19,16 @@ export default function ContactDetailViewBK(props) {
         <div>
             <table>
                 <tr>
-                    <td>{contactBK.info1}</td>
+                    <td>{contactHS.info1}</td>
                 </tr>
                 <tr>
-                    <td>{contactBK.info2}</td>
+                    <td>{contactHS.info2}</td>
                 </tr>
                 <tr>
-                    <td>{contactBK.info3}</td>
+                    <td>{contactHS.info3}</td>
                 </tr>
                 <tr>
-                    <td>{contactBK.info4}</td>
+                    <td>{contactHS.info4}</td>
                 </tr>
                 <button class="plus">+</button>
                 <input class="quantityScreen" type="number"></input>

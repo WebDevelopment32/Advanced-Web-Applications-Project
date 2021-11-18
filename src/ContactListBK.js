@@ -11,7 +11,7 @@ export default function ContactListBK(props) {
                 </Link>
             )}
             </div>
-            <div className="contactDetail">
+            <div>
                 <h4><code>Tilaus sisältää seuraavat tuotteet: </code></h4>
                 <Outlet />
             </div>
