@@ -7,10 +7,20 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
-const connectDatabase = require('./config/database')
+const connectDatabase = require('./config/database');
+const errorMiddleware = require('./middlewares/errors');
+const ErrorHandler = require('./utils/errorHandler');
 
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
+
+// Handling uncought exception on event of it
+process.on('uncaughtException', err => {
+    console.log(`ERROR: ${err.message}`);
+    // This is a developer caused error when the developer has made an programming mistake with not existing resourses
+    console.log('Shutting down due to uncaught exception');
+    process.exit(1);
+});
 
 // Connecting to database
 connectDatabase();
@@ -27,7 +37,22 @@ const restaurants = require('./routes/restaurants');
 // When changes are made to sertain route, it should become V2
 app.use('/api/v1/', restaurants);
 
+// Handle unhandled routes in all routes
+app.all('*',  (req, res, next) => {
+    next(new ErrorHandler(`${req.originalUrl} route not found`,  404));
+});
+
 const PORT = process.env.PORT;
-app.listen(PORT, ()=> {
-    console.log(`Server started on port ${process.env.PORT}`)
+const server = app.listen(PORT, ()=> {
+    console.log(`Server started on port ${process.env.PORT} in ${prosess.env.NODE_ENV} mode`);
+});
+
+// Handling unhandled promise rejection
+// This error occurs when a critical error occurs (Database not found etc.)
+process.on('unhandledRejection', err => {
+    console.log(`Error ${err.message}`);
+    console.log('Shutting down server due to unhandled promise rejection');
+    server.close( () => {
+        process.exit(1);
+    });
 });

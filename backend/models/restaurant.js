@@ -38,7 +38,7 @@ const restaurantSchema = new mongoose.Schema({
     }
 });
 
-// Creating restaurant slug before saving to DB
+// Creating restaurant slug before saving to schema to DB
 restaurantSchema.pre('save', function(next) {
     this.slug = slugify(this.name, {lower: true /* Lower case the slug */});
     next();
