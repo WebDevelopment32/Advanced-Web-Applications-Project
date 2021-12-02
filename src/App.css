@@ -41,48 +41,59 @@
 
 .plus{
   font-family: 'Arial Rounded MT';
-  background-color: #70a6ff;
-
-  color: white;
+  background-color: #fff;
+  color: #5394fd;
   padding: 3px 10px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   position: absolute;
   right: 539px;
-  bottom: 30px;
-  font-size: 20px;
-  border-radius: 50%;
+  bottom: 26px;
+  font-size: 30px;
+  border: none;
+}
+
+.plus:hover {
+  color: blue;
 }
 
 .minus{
   font-family: 'Arial Rounded MT';
-  background-color: #70a6ff;
-  color: white;
+  background-color: #fff;
+  color: #5394fd;
   padding: 3px 10px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   position: absolute;
   right: 245px;
-  bottom: 30px;
-  font-size: 20px;
-  border-radius: 50%;
+  bottom: 27px;
+  font-size: 30px;
+  border: none;
+}
+
+.minus:hover {
+  color: blue;
 }
 
 .Tilaukseen {
   font-family: 'Arial Rounded MT';
-  background-color: #70a6ff;
-  color: white;
+  background-color: #fff;
+  color: #5394fd;
   padding: 3px 10px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   position: absolute;
-  right:    30px;
-  bottom:   30px;
-  font-size: 20px;
-  border-radius: 3px;
+  right: 30px;
+  bottom: 27px;
+  font-size: 27px;
+  border: none;
+}
+
+.Tilaukseen:hover {
+  color: blue;
 }
 
 .quantityScreen {

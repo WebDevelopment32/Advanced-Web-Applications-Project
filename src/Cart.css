@@ -40,6 +40,10 @@ td button {
     color: brown;
     background-color: white;
 }
+td button:hover {
+    color: red;
+}
+
 .total-price {
     display: flex;
     justify-content: flex-end;

@@ -15,7 +15,7 @@ export default function Settings() {
             </div>
             <div>
                 <p className="settingsText">Email</p>
-                <input type="text" className="settingsInput"></input>           
+                <input type="text" className="settingsInputEmail"></input>           
             </div>
             <div className="addressDivs">
                 <p className="settingsText">Address</p>
@@ -23,7 +23,10 @@ export default function Settings() {
             </div>
             <div className="addressDivs">
                 <p className="settingsText">City</p>
-                <input type="text" className="settingsInput"></input>            
+                <input type="text" className="settingsInput"></input>
+            </div>
+            <div>
+                <button className="saveBtn">Save</button>    
             </div>
         </div>
     )

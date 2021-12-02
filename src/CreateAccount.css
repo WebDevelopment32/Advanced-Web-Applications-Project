@@ -51,7 +51,8 @@
 }
 
 .form-button:hover {
-    background: lightgreen;
+    background: #5394fd;
+    color:white;
 }
 
 .form-text {

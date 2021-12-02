@@ -51,11 +51,12 @@
 }
 
 .form-button:hover {
-    background: lightgreen;
+    background: #5394fd;
 }
 
 .form-text {
     text-align: center;
+    color:white;
 }
 
 .form-link {

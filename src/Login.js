@@ -17,7 +17,10 @@ function Login() {
                 </div>
                 <button class="form-button" type="submit">Continue</button>
                 <p class="form-text">
-                    <a class="form-link" href="./CreateAccount" id="linkCreateAccount">Don't have an account? Create account</a>
+                    <a class="form-link" href="./CreateAccount" id="linkCreateAccount">Don't have an account? Create account!</a>
+                </p>
+                <p class="form-text">
+                    <a class="form-link" href="./CreateRestaurantAccount" id="linkCreateRestaurantAccount">Creating account for a restaurant? Create restaurant account!</a>
                 </p>
             </form>
         </div>

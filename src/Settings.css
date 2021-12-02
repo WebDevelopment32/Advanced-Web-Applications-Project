@@ -16,19 +16,47 @@
     padding-top: 20px;
 }
 
-.settingsInputNames {
-    margin-left: 30px;
-    height: 30px;
-    width: 400px;
-}
-
 .settingsText {
     padding-left: 30px;
     padding-top: 20px;
+}
+
+.settingsTextEmail {
+    padding-left: 30px;
+    padding-top: 20px;
+
 }
 
 .settingsInput {
     margin-left: 30px;
     height: 30px;
     width: 400px;
+}
+
+.settingsInputNames {
+    margin-left: 30px;
+    height: 30px;
+    width: 400px;
+}
+
+.settingsInputEmail {
+    margin-left: 30px;
+    height: 30px;
+    width: 841px;
+}
+
+.saveBtn {
+    margin-top: 20px;
+    position: absolute;
+    left: 30px;
+    font-family: 'Arial Rounded MT';
+    font-size: 30px;
+    color: #5394fd;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.saveBtn:hover {
+    color: blue;
 }
