@@ -5,14 +5,18 @@ import './Home.css';
 export default function Home() {
     return (
         <div>
-           <h1 className="HomeText">
+            <div className="container1">
+            <img className="logo" src="../logo192.png" alt="LogoIcon"/>
+            </div>
+            <div className="container2">
+            <h1>
                React Food Delivery App
             </h1>
-            <p className="HomeText">
+            <p>
                 Welcome to React Food Delivery. 
                 Select a restaurant where you'd like to order
             </p>
-
+            </div>
             <div class="dashboard-content">
                 <Link to="/contacts"><div class="dashboard-card">
                     <img class="card-image" src="../Images/mcdonalds.jpg" alt="McDonalds"/>

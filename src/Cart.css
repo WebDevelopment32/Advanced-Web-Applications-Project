@@ -8,7 +8,7 @@ table{
 }
 
 td img{
-    width: 100px;
+    width: 150px;
     height: 100px;
     margin-right: 10px;
 }
@@ -47,7 +47,13 @@ td button:hover {
 .total-price {
     display: flex;
     justify-content: flex-end;
+    text-align: right;
 }
+
+.hinta {
+    padding-right: 20px;
+}
+
 .total-price table {
     border-top: 2px solid rgb(192, 225, 255);
     width: 100%;
@@ -56,8 +62,42 @@ td button:hover {
 
 .loppusumma {
     text-align: right;
+    padding-right: 20px;
 }
 
 th:last-child {
     text-align: right;
+    padding-right: 20px;
+}
+
+.confirmBtn {
+    margin-top: 20px;
+    position: absolute;
+    right: 18px;
+    font-family: 'Arial Rounded MT';
+    font-size: 25px;
+    color: #5394fd;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.confirmBtn:hover {
+    color: blue;
+}
+
+.declineBtn {
+    margin-top: 20px;
+    position: absolute;
+    right: 400px;
+    font-family: 'Arial Rounded MT';
+    font-size: 25px;
+    color: brown;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.declineBtn:hover {
+    color: red;
 }

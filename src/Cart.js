@@ -2,6 +2,15 @@ import React from 'react'
 import './Cart.css'
 
 export default function OrderMenu() {
+
+    function Decline() {
+        alert('Order was declined successfully')
+        }
+
+    function Confirm() {
+        alert('Order was confirmed successfully')
+        }
+
     return (
         <div className="order-page">
             <table>
@@ -21,7 +30,7 @@ export default function OrderMenu() {
                             </div>
                         </div>
                     </td>
-                    <td className="loppusumma"><input type="number" value="1"/></td>
+                    <td><input type="number" value="1"/></td>
                     <td className="loppusumma">10.00€</td>
                 </tr>
                 <tr>
@@ -35,7 +44,7 @@ export default function OrderMenu() {
                             </div>
                         </div>
                     </td>
-                    <td className="loppusumma"><input type="number" value="1"/></td>
+                    <td><input type="number" value="1"/></td>
                     <td className="loppusumma">10.00€</td>
                 </tr>
             </table>
@@ -43,10 +52,12 @@ export default function OrderMenu() {
                 <table>
                     <tr>
                         <td>Total</td>
-                        <td>20.00€</td>
+                        <td className="hinta">20.00€</td>
                     </tr>
                 </table>
-            </div>    
+            </div>
+            <button className="declineBtn" onClick={Decline}>Decline</button>
+            <button className="confirmBtn" onClick={Confirm}>Confirm order</button>
         </div>
     )
 }
