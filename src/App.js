@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './Home';
 import User from './User';
+import Settings from './Settings';
 import ContactList from './ContactList';
 import ContactListBK from './ContactListBK';
 import ContactListHS from './ContactListHS';
@@ -31,12 +32,13 @@ function App() {
     <BrowserRouter>
       <div>
         <div className="Navbar">
-          <Link to="/"><div>Home</div></Link>
-          <Link to="/User"><div>User</div></Link>
+          <Link to="/"><div><img class="navbarIcons" src="../Images/HomeIcon.png" alt="HomeIcon"/>Home</div></Link>
+          <Link to="/User"><div><img class="navbarIcons" src="../Images/UserIcon.png" alt="UserIcon"/>User</div></Link>
         </div>
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/User" element={ <User /> } />
+          <Route path="/Settings" element={ <Settings /> } />
           <Route path="/contacts" element={ <ContactList contacts={ contacts }/> } >
           <Route path=":contactId" element={ <ContactDetailView contacts={ contacts } /> } />
           </Route>

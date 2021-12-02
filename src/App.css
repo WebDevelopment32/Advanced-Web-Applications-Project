@@ -1,20 +1,33 @@
 .Navbar {
   display: flex;
-  background-color: rgb(170, 144, 144);
+  background-color: #70a6ff;
 }
 
 .Navbar > * {
-  margin-right: 10px;
+  margin-left: 18px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.navbarIcons {
+  padding-right: 4px;
+  width: 24px;
+  height: 24px;
+  vertical-align: bottom;
+}
+
+.HomeText {
+  padding-left: 20px;
 }
 
 .contactListElement {
-  padding: 5px;
+  padding: 15px;
   border-top: 1px solid lightgrey;
 }
 
 .contactListElement:hover {
-  background-color: lightyellow;
-  color: red;
+  background-color: aliceblue;
+  color: blue;
 }
 
 .contactListView {
@@ -26,33 +39,50 @@
   border-right: 1px solid lightgrey;
 }
 
-.Nappi1 {
-  margin-left: 10px;
-}
-
-.Nappi2 {
-  margin-left: 10px;
-}
-
 .plus{
+  font-family: 'Arial Rounded MT';
+  background-color: #70a6ff;
+
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   position: absolute;
-  right:    539px;
-  bottom:   30px;
+  right: 539px;
+  bottom: 30px;
   font-size: 20px;
+  border-radius: 50%;
 }
 
 .minus{
+  font-family: 'Arial Rounded MT';
+  background-color: #70a6ff;
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   position: absolute;
-  right:    250px;
-  bottom:   30px;
+  right: 245px;
+  bottom: 30px;
   font-size: 20px;
+  border-radius: 50%;
 }
 
 .Tilaukseen {
+  font-family: 'Arial Rounded MT';
+  background-color: #70a6ff;
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   position: absolute;
   right:    30px;
   bottom:   30px;
   font-size: 20px;
+  border-radius: 3px;
 }
 
 .quantityScreen {
@@ -60,4 +90,8 @@
   right:    280px;
   bottom:   30px;
   font-size: 20px;
+}
+
+.tuoteInfo {
+  padding-left: 30px;
 }

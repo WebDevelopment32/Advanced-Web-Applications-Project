@@ -1,23 +1,23 @@
 [
     {
-      "tuote1": "Herkuttelijoille",
-      "info1": "Kaksi valitsemaasi sriracha ateriaa",
-      "info2": "valitsemasi Ben & Jerry's -jäätelö",
-      "info3": "2x 0,5l virvoitusjuoma",
+      "tuote1": "Gourmet",
+      "info1": "Two sriracha meals of your choice",
+      "info2": "Ben & Jerry's ice cream of your liking",
+      "info3": "2x 0,5l soft drinks",
       "info4": ""
     },
     {
-      "tuote1": "Ex-lihansyöjille",
-      "info1": "Plant-based WHOPPER® -ateria",
-      "info2": "Plant based nuggets 4kpl",
-      "info3": "0,5l virvoitusjuoma",
-      "info4": "+ dippi"
+      "tuote1": "Ex-meatlovers",
+      "info1": "Plant-based WHOPPER® -meal",
+      "info2": "Plant based nuggets 4x",
+      "info3": "0,5l soft drink",
+      "info4": "+ dipping sauce"
     },
     {
-      "tuote1": "Oloihinking",
-      "info1": "Double Whopper-ateria",
-      "info2": "Chicken Nuggets 9kpl",
-      "info3": "0,5l virvoitusjuoma",
-      "info4": "+ dippi"
+      "tuote1": "Hangover",
+      "info1": "Double Whopper-meal",
+      "info2": "Chicken Nuggets 9x",
+      "info3": "0,5l soft drink",
+      "info4": "+ dipping sauce"
     }
 ]

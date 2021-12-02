@@ -1,0 +1,34 @@
+.nameDivs {
+    display: inline-block;
+}
+
+.addressDivs {
+    display: inline-block;
+}
+
+.settingsOtsikko {
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.settingsTextNames {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.settingsInputNames {
+    margin-left: 30px;
+    height: 30px;
+    width: 400px;
+}
+
+.settingsText {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.settingsInput {
+    margin-left: 30px;
+    height: 30px;
+    width: 400px;
+}

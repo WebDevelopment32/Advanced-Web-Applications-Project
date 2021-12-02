@@ -11,8 +11,8 @@ export default function ContactListHS(props) {
                 </Link>
             )}
             </div>
-            <div>
-                <h4><code>Tilaus sisältää seuraavat tuotteet: </code></h4>
+            <div className="tuoteInfo">
+                <h4><code>The order includes the following products: </code></h4>
                 <Outlet />
             </div>        
         </div>
