@@ -2,6 +2,9 @@ import './App.css';
 import Home from './Home';
 import User from './User';
 import Settings from './Settings';
+import Cart from './Cart';
+import Login from './Login';
+import CreateAccount from './CreateAccount';
 import ContactList from './ContactList';
 import ContactListBK from './ContactListBK';
 import ContactListHS from './ContactListHS';
@@ -34,11 +37,16 @@ function App() {
         <div className="Navbar">
           <Link to="/"><div><img class="navbarIcons" src="../Images/HomeIcon.png" alt="HomeIcon"/>Home</div></Link>
           <Link to="/User"><div><img class="navbarIcons" src="../Images/UserIcon.png" alt="UserIcon"/>User</div></Link>
+          <Link to="/Cart"><div><img class="navbarIcons" src="../Images/CartIcon.png" alt="CartIcon"/>Cart</div></Link>
+          <Link to="/Login"><div><img class="navbarIcons" src="../Images/LoginIcon.png" alt="LoginIcon"/>Login</div></Link>
         </div>
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/User" element={ <User /> } />
           <Route path="/Settings" element={ <Settings /> } />
+          <Route path="/Cart" element={ <Cart /> } />
+          <Route path="/Login" element={ <Login /> } />
+          <Route path="/CreateAccount" element={ <CreateAccount /> } />
           <Route path="/contacts" element={ <ContactList contacts={ contacts }/> } >
           <Route path=":contactId" element={ <ContactDetailView contacts={ contacts } /> } />
           </Route>

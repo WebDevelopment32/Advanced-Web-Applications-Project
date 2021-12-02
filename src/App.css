@@ -22,7 +22,7 @@
 
 .contactListElement {
   padding: 15px;
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid rgb(192, 225, 255);
 }
 
 .contactListElement:hover {
@@ -36,7 +36,7 @@
 
 .contactList {
   width: 25%;
-  border-right: 1px solid lightgrey;
+  border-right: 1px solid rgb(192, 225, 255);
 }
 
 .plus{
@@ -94,4 +94,5 @@
 
 .tuoteInfo {
   padding-left: 30px;
+  text-align: left;
 }

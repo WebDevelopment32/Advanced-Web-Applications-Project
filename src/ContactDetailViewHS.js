@@ -17,7 +17,7 @@ export default function ContactDetailViewHS(props) {
 
     return (
         <div>
-            <table>
+            <table className="tuoteInfo">
                 <tr>
                     <td>{contactHS.info1}</td>
                 </tr>
