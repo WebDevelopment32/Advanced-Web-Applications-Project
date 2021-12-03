@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, Outlet } from 'react-router-dom'
 import './CreateAccount.css'
 
 function CreateRestaurantAccount() {
@@ -23,7 +24,9 @@ function CreateRestaurantAccount() {
                     <input type="password" class="form-input" autoFocus placeholder="Confirm password"></input>
                     <div class="form-input-error-message"></div>
                 </div>
+                <Link to="/RestaurantUser">
                 <button class="form-button" type="submit">Continue</button>
+                </Link>
                 <p class="form-text">
                     <a class="form-link" href="./Login" id="linkLogin">Already have a restaurant account? Sign in</a>
                 </p>

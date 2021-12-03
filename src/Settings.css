@@ -24,7 +24,6 @@
 .settingsTextEmail {
     padding-left: 30px;
     padding-top: 20px;
-
 }
 
 .settingsInput {
@@ -48,7 +47,7 @@
 .saveBtn {
     margin-top: 20px;
     position: absolute;
-    left: 30px;
+    left: 23px;
     font-family: 'Arial Rounded MT';
     font-size: 30px;
     color: #5394fd;
@@ -58,5 +57,70 @@
 }
 
 .saveBtn:hover {
+    color: blue;
+}
+
+/* RESTAURANT CSS ALAHAAALLA */
+
+.restaurantOtsikko {
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.restaurantName {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.restaurantNameInput {
+    margin-left: 30px;
+    height: 30px;
+    width: 841px;
+}
+
+.infoDivs {
+    display: inline-block;
+}
+
+.infoNames {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.infoInput {
+    margin-left: 30px;
+    height: 30px;
+    width: 400px;
+}
+
+.restaurantSaveBtn {
+    margin-top: 20px;
+    position: absolute;
+    left: 23px;
+    font-family: 'Arial Rounded MT';
+    font-size: 30px;
+    color: #5394fd;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.restaurantSaveBtn:hover {
+    color: blue;
+}
+
+.restaurantAddBtn {
+    margin-top: 20px;
+    position: absolute;
+    left: 638px;
+    font-family: 'Arial Rounded MT';
+    font-size: 30px;
+    color: #5394fd;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.restaurantAddBtn:hover {
     color: blue;
 }

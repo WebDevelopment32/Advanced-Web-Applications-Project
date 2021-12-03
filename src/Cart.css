@@ -9,8 +9,9 @@ table{
 
 td img{
     width: 150px;
-    height: 100px;
-    margin-right: 10px;
+    height: 90px;
+    margin-right: 20px;
+    padding-left: 6px;
 }
 
 .cart-info{
@@ -26,6 +27,10 @@ th{
     font-weight: bold;
 }
 
+.product {
+    padding-left: 25px;
+}
+
 td {
     padding: 10px 5px;
 }
@@ -37,8 +42,12 @@ td input {
 }
 
 td button {
+    font-family: 'Arial Rounded MT';
+    font-size: 15px;
     color: brown;
     background-color: white;
+    border: none;
+    cursor: pointer;
 }
 td button:hover {
     color: red;
@@ -52,6 +61,10 @@ td button:hover {
 
 .hinta {
     padding-right: 20px;
+}
+
+.total {
+    text-align: left;
 }
 
 .total-price table {

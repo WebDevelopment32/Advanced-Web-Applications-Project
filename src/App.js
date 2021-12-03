@@ -6,6 +6,8 @@ import Cart from './Cart';
 import Login from './Login';
 import CreateAccount from './CreateAccount';
 import CreateRestaurantAccount from './CreateRestaurantAccount';
+import RestaurantUser from './RestaurantUser';
+import AddProducts from './AddProducts';
 import ContactList from './ContactList';
 import ContactListBK from './ContactListBK';
 import ContactListHS from './ContactListHS';
@@ -49,6 +51,8 @@ function App() {
           <Route path="/Login" element={ <Login /> } />
           <Route path="/CreateAccount" element={ <CreateAccount /> } />
           <Route path="/CreateRestaurantAccount" element={ <CreateRestaurantAccount /> } />
+          <Route path="/RestaurantUser" element={ <RestaurantUser /> } />
+          <Route path="/AddProducts" element={ <AddProducts /> } />
           <Route path="/contacts" element={ <ContactList contacts={ contacts }/> } >
           <Route path=":contactId" element={ <ContactDetailView contacts={ contacts } /> } />
           </Route>

@@ -15,7 +15,7 @@ export default function OrderMenu() {
         <div className="order-page">
             <table>
                 <tr>
-                    <th>Product</th>
+                    <th className="product">Product</th>
                     <th>Quantity</th>
                     <th>Total Price</th>
                 </tr>
@@ -51,7 +51,7 @@ export default function OrderMenu() {
             <div className="total-price">
                 <table>
                     <tr>
-                        <td>Total</td>
+                        <td className="total">Total</td>
                         <td className="hinta">20.00€</td>
                     </tr>
                 </table>

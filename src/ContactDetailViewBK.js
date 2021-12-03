@@ -30,10 +30,13 @@ export default function ContactDetailViewBK(props) {
                 <tr>
                     <td>{contactBK.info4}</td>
                 </tr>
+                <tr>
+                    <td className="price">{contactBK.price}</td>
+                </tr>
                 <button class="plus">+</button>
                 <input class="quantityScreen" type="number"></input>
                 <button class="minus">-</button>
-                <button class="Tilaukseen" onClick={Tilaus}>Add to order</button>
+                <button class="Tilaukseen" onClick={Tilaus}>Add to cart</button>
             </table>
         </div>
     )
