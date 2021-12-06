@@ -26,7 +26,7 @@ process.on('uncaughtException', err => {
 connectDatabase();
 
 // Setup body parser
-app.use(express.json);
+app.use(express.json());
 
 // Importing routes
 const restaurants = require('./routes/restaurants');
@@ -44,7 +44,7 @@ app.all('*',  (req, res, next) => {
 
 const PORT = process.env.PORT;
 const server = app.listen(PORT, ()=> {
-    console.log(`Server started on port ${process.env.PORT} in ${prosess.env.NODE_ENV} mode`);
+    console.log(`Server started on port ${process.env.PORT} in ${process.send.NODE_ENV} mode`);
 });
 
 // Handling unhandled promise rejection
