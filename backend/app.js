@@ -35,8 +35,8 @@ app.use(fileUpload());
 app.use(express.json());
 
 // Importing routes
-const restaurants = require('./routes/restaurants');
-const restaurantItem = require('./routes/restaurantItem');
+const restaurants = require('./routes/restaurantRouter');
+const restaurantItem = require('./routes/restaurantItemRouter');
 
 // For all routes, /api/v1/ will be added as middleware
 // Used to save olf http calls and make old data safe
