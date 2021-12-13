@@ -13,16 +13,63 @@ const restaurantSchema = new mongoose.Schema({
         maxlength: [100, 'Restaurant name can not exeed 100 characters']
     },
 
+    address: {
+        type: String,
+        required: [true, 'Address is required']
+    },
+
+    city: {
+        type: String
+    },
+
+    operatingHours: {
+        type: String,
+        required: [true, 'Operating hours required']
+    },
+
+    image: {
+        name: String,
+        data: {
+            type: Buffer,
+            require: [true, 'Restaurant must have an image']
+        }
+    },
+
+    restaurantType: {
+        type: String,
+        enum: {
+            values: [
+                'Buffet',
+                'Fast food',
+                'Casual dining',
+                'Fine dining'
+            ],
+            message: 'Please select correct option for restaurant type'
+        }
+    },
+
+    priceLevel: {
+        type: String,
+        enum: {
+            values: [
+                '€',
+                '€€',
+                '€€€',
+                '€€€€'
+            ],
+            message: 'Please select restaurants price level'
+        }
+    },
+
     slug: String,
 
     company: {
-        type: String,
-        required: [true, 'You must add the Company name']
+        // If a real product, this field would be a must
+        type: String
     },
 
     description: {
         type: String,
-        required: [true, 'You must enter description for your restaurant'],
         maxlength: [1000, 'Description cannot exeed 1000 characters']
     },
 
@@ -33,14 +80,20 @@ const restaurantSchema = new mongoose.Schema({
     },
 
     phoneNumber: { 
-        type: String,
-        required: [true, 'You must enter a phone number for customer support!']
+        // If a real product, this field would be a must
+        type: Number
     }
 });
 
 // Creating restaurant slug before saving to schema to DB
 restaurantSchema.pre('save', function(next) {
     this.slug = slugify(this.name, {lower: true /* Lower case the slug */});
+    next();
+});
+
+// Update job slug when restaurants name is being updated
+restaurantSchema.pre('findByIdAndUpdate', function(next) {
+    this.slug = slugify(this.name, {lower: true});
     next();
 });
 

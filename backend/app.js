@@ -10,6 +10,7 @@ const dotenv = require('dotenv');
 const connectDatabase = require('./config/database');
 const errorMiddleware = require('./middlewares/errors');
 const ErrorHandler = require('./utils/errorHandler');
+const fileUpload = require('express-fileupload');
 
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
@@ -24,6 +25,9 @@ process.on('uncaughtException', err => {
 
 // Connecting to database
 connectDatabase();
+
+// Handle image upload
+app.use(fileUpload());
 
 // Setup body parser
 app.use(express.json());
@@ -42,9 +46,11 @@ app.all('*',  (req, res, next) => {
     next(new ErrorHandler(`${req.originalUrl} route not found`,  404));
 });
 
+app.use(errorMiddleware);
+
 const PORT = process.env.PORT;
 const server = app.listen(PORT, ()=> {
-    console.log(`Server started on port ${process.env.PORT} in ${process.send.NODE_ENV} mode`);
+    console.log(`Server started on port ${process.env.PORT} in ${process.env.NODE_ENV} mode`);
 });
 
 // Handling unhandled promise rejection
