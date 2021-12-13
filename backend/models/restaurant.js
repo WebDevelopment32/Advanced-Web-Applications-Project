@@ -5,7 +5,6 @@ const validator = require('validator');
 
 //Model
 const restaurantSchema = new mongoose.Schema({
-    // Name of the restaurant
     name: {
         type: String, // name is a string
         require: [true, 'Please enter restaurant name!'], // Restaurant must enter its name
@@ -30,8 +29,7 @@ const restaurantSchema = new mongoose.Schema({
     image: {
         name: String,
         data: {
-            type: Buffer,
-            require: [true, 'Restaurant must have an image']
+            type: Buffer
         }
     },
 
@@ -88,12 +86,6 @@ const restaurantSchema = new mongoose.Schema({
 // Creating restaurant slug before saving to schema to DB
 restaurantSchema.pre('save', function(next) {
     this.slug = slugify(this.name, {lower: true /* Lower case the slug */});
-    next();
-});
-
-// Update job slug when restaurants name is being updated
-restaurantSchema.pre('findByIdAndUpdate', function(next) {
-    this.slug = slugify(this.name, {lower: true});
     next();
 });
 

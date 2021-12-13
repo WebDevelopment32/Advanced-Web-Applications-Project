@@ -15,6 +15,7 @@ const fileUpload = require('express-fileupload');
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
 
+/*
 // Handling uncought exception on event of it
 process.on('uncaughtException', err => {
     console.log(`ERROR: ${err.message}`);
@@ -22,6 +23,7 @@ process.on('uncaughtException', err => {
     console.log('Shutting down due to uncaught exception');
     process.exit(1);
 });
+*/
 
 // Connecting to database
 connectDatabase();
@@ -34,12 +36,14 @@ app.use(express.json());
 
 // Importing routes
 const restaurants = require('./routes/restaurants');
+const restaurantItem = require('./routes/restaurantItem');
 
 // For all routes, /api/v1/ will be added as middleware
 // Used to save olf http calls and make old data safe
 // If old data is used on frontend should the old call be used
 // When changes are made to sertain route, it should become V2
 app.use('/api/v1/', restaurants);
+app.use('/api/v1/', restaurantItem);
 
 // Handle unhandled routes in all routes
 app.all('*',  (req, res, next) => {
