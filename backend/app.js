@@ -14,6 +14,7 @@ const ErrorHandler = require('./utils/errorHandler');
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
 
+/*
 // Handling uncought exception on event of it
 process.on('uncaughtException', err => {
     console.log(`ERROR: ${err.message}`);
@@ -21,6 +22,7 @@ process.on('uncaughtException', err => {
     console.log('Shutting down due to uncaught exception');
     process.exit(1);
 });
+*/
 
 // Connecting to database
 connectDatabase();
@@ -42,9 +44,11 @@ app.all('*',  (req, res, next) => {
     next(new ErrorHandler(`${req.originalUrl} route not found`,  404));
 });
 
+app.use(errorMiddleware);
+
 const PORT = process.env.PORT;
 const server = app.listen(PORT, ()=> {
-    console.log(`Server started on port ${process.env.PORT} in ${process.send.NODE_ENV} mode`);
+    console.log(`Server started on port ${process.env.PORT} in ${process.env.NODE_ENV} mode`);
 });
 
 // Handling unhandled promise rejection
