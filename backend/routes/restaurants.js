@@ -7,7 +7,8 @@ const {
     newRestaurant,
     getRestaurant,
     updateRestaurant,
-    deleteRestaurant
+    deleteRestaurant,
+    uploadImage
 } = require('../controllers/restaurantsController');
 
 // Passing route to route HTTP calls and defining the call method type and giving it the controller method
@@ -16,6 +17,7 @@ router.route('/restaurant/:id').get(getRestaurant);
 
 router.route('/restaurant/new').post(newRestaurant);
 router.route('/restaurant/update/:id').put(updateRestaurant);
+router.route('/restaurant/uploadimg/:id').put(uploadImage);
 
 router.route('/restaurant/delete/:id').delete(deleteRestaurant);
 

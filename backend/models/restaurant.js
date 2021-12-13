@@ -28,8 +28,11 @@ const restaurantSchema = new mongoose.Schema({
     },
 
     image: {
-        type: Buffer,
-        // enable after testing wihtout image require: [true, 'Restaurant must have an image']
+        name: String,
+        data: {
+            type: Buffer,
+            require: [true, 'Restaurant must have an image']
+        }
     },
 
     restaurantType: {

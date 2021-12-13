@@ -10,11 +10,11 @@ const dotenv = require('dotenv');
 const connectDatabase = require('./config/database');
 const errorMiddleware = require('./middlewares/errors');
 const ErrorHandler = require('./utils/errorHandler');
+const fileUpload = require('express-fileupload');
 
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
 
-/*
 // Handling uncought exception on event of it
 process.on('uncaughtException', err => {
     console.log(`ERROR: ${err.message}`);
@@ -22,10 +22,12 @@ process.on('uncaughtException', err => {
     console.log('Shutting down due to uncaught exception');
     process.exit(1);
 });
-*/
 
 // Connecting to database
 connectDatabase();
+
+// Handle image upload
+app.use(fileUpload());
 
 // Setup body parser
 app.use(express.json());
