@@ -18,6 +18,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xssClean = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
@@ -32,6 +33,11 @@ process.on('uncaughtException', err => {
 
 // Connecting to database
 connectDatabase();
+
+// Set up body parser
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(express.static('files'));
 
 // Security headers for http
 app.use(helmet());

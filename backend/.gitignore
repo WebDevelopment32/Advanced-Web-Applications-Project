@@ -1,6 +1,7 @@
 /node_modules
 /.pnp
 .pnp.js
+config/config.env
 
 # NodeJS specific #
 .nyc_output/
