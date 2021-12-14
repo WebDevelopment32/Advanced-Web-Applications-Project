@@ -1,2 +1,7 @@
 cd backend
 npm run prod
+
+Need to use local mongoDB for evaluation. Environment in postman = RESTapi
+
+Can be found also in HEROKU. Not up for EVALUATION. Done after returning the project.
+https://awap-restapi.herokuapp.com Can be used with postman when changing environment to production
