@@ -57,15 +57,13 @@ exports.newItem = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler(`Restaurant with id: ${req.params.id} not found, item could not be created`));
     }
 
+    req.body.owner = req.params.id;
+
     const item = await RestaurantItem.create(req.body);
 
     // Could check if the item is added by restaurant dataOwner to make sure that
     //* item added to restaurant is done by the restaurant
     // Could also make it so that when restaurant owner is logged in, restaurant id of the owner will be carried in req.user
-
-    itemAdd = {
-        items: item._id.toString()
-    }
 
     restaurant = await Restaurant.findByIdAndUpdate(req.params.id, {$push: {items: item._id}});
 

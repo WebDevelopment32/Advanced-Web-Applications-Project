@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-const validator = require('validator');
 
 const restaurantItemSchema = new mongoose.Schema({
     name: {
@@ -35,6 +34,12 @@ const restaurantItemSchema = new mongoose.Schema({
             ],
             message: 'Add categories for your food items'
         }
+    },
+
+    owner: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'Restaurant',
+        required: [true, 'Item must have a creator']
     },
     
     slug: String
