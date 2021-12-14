@@ -39,7 +39,8 @@ app.use(cookieParser());
 // Importing routes
 const restaurants = require('./routes/restaurantRouter');
 const restaurantItem = require('./routes/restaurantItemRouter');
-const user = require('./routes/userLoginRouter');
+const userLogin = require('./routes/userLoginRouter');
+const user = require('./routes/userRouter');
 
 // For all routes, /api/v1/ will be added as middleware
 // Used to save olf http calls and make old data safe
@@ -47,6 +48,7 @@ const user = require('./routes/userLoginRouter');
 // When changes are made to sertain route, it should become V2
 app.use('/api/v1/', restaurants);
 app.use('/api/v1/', restaurantItem);
+app.use('/api/v1/', userLogin);
 app.use('/api/v1/', user);
 
 
