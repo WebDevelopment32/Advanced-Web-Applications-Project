@@ -1,0 +1,57 @@
+.addOtsikko {
+    padding-left: 30px;
+    padding-bottom: 20px;
+}
+
+.addNameDiv {
+    display: inline-block;
+}
+
+.addNameInput {
+    margin-left: 30px;
+    height: 30px;
+    width: 630px;
+}
+
+.addPriceInput {
+    margin-left: 30px;
+    height: 30px;
+    width: 400x;
+}
+
+.addProductName {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.addName {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.addInfo {
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.addInput {
+    margin-left: 30px;
+    height: 30px;
+    width: 400px;
+}
+
+.addBtn {
+    margin-top: 125px;
+    position: absolute;
+    left: 26px;
+    font-family: 'Arial Rounded MT';
+    font-size: 30px;
+    color: #5394fd;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    color: blue;
+}

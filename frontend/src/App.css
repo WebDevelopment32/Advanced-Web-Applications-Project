@@ -1,0 +1,109 @@
+.Navbar {
+  display: flex;
+  background-color: #70a6ff;
+}
+
+.Navbar > * {
+  margin-left: 18px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+.navbarIcons {
+  padding-right: 4px;
+  width: 24px;
+  height: 24px;
+  vertical-align: bottom;
+}
+
+.contactListElement {
+  padding: 15px;
+  border-top: 1px solid rgb(192, 225, 255);
+}
+
+.contactListElement:hover {
+  background-color: aliceblue;
+  color: blue;
+}
+
+.contactListView {
+  display: flex;
+}
+
+.contactList {
+  width: 25%;
+  border-right: 1px solid rgb(192, 225, 255);
+}
+
+.price {
+  text-align: right;
+}
+
+.plus{
+  font-family: 'Arial Rounded MT';
+  background-color: #fff;
+  color: #5394fd;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  right: 539px;
+  bottom: 26px;
+  font-size: 30px;
+  border: none;
+}
+
+.plus:hover {
+  color: blue;
+}
+
+.minus{
+  font-family: 'Arial Rounded MT';
+  background-color: #fff;
+  color: #5394fd;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  right: 245px;
+  bottom: 27px;
+  font-size: 30px;
+  border: none;
+}
+
+.minus:hover {
+  color: blue;
+}
+
+.Tilaukseen {
+  font-family: 'Arial Rounded MT';
+  background-color: #fff;
+  color: #5394fd;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  right: 30px;
+  bottom: 27px;
+  font-size: 27px;
+  border: none;
+}
+
+.Tilaukseen:hover {
+  color: blue;
+}
+
+.quantityScreen {
+  position: absolute;
+  right:    280px;
+  bottom:   30px;
+  font-size: 20px;
+}
+
+.tuoteInfo {
+  padding-left: 30px;
+  text-align: left;
+}
