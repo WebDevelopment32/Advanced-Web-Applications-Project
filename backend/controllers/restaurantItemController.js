@@ -63,10 +63,6 @@ exports.newItem = catchAsyncErrors(async (req, res, next) => {
     //* item added to restaurant is done by the restaurant
     // Could also make it so that when restaurant owner is logged in, restaurant id of the owner will be carried in req.user
 
-    itemAdd = {
-        items: item._id.toString()
-    }
-
     restaurant = await Restaurant.findByIdAndUpdate(req.params.id, {$push: {items: item._id}});
 
     res.status(200).json({
