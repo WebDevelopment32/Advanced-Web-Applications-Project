@@ -1,2 +1,4 @@
 cd backend
 npm run prod
+
+API requires local hosted mongoDB
