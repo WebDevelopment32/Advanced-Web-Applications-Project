@@ -6,7 +6,10 @@ const {
     getAllUsers,
     getUsers,
     getOperators,
-    getUser
+    getUser,
+    getLoggedUser,
+    updateUser,
+    deleteUser
 } = require('../controllers/userController');
 
 const {
@@ -15,9 +18,13 @@ const {
 } = require('../middlewares/authenticator');
 
 router.route('/users').get(getAllUsers);
-router.route('/user/:id').get(getUser);
+router.route('/user/find/:id').get(getUser);
 
 router.route('/operator/users/user').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getUsers);
 router.route('/operator/users/operator').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getOperators);
+router.route('/user/loggedin').get(isUserAuthenticated, getLoggedUser);
+router.route('/user/delete').delete(isUserAuthenticated, deleteUser);
+
+router.route('/user/update').put(isUserAuthenticated, updateUser);
 
 module.exports = router;
