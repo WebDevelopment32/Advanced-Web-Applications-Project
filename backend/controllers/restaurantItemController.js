@@ -1,4 +1,5 @@
 const RestaurantItem = require('../models/restaurantItem');
+const Restaurant = require('../models/restaurant');
 const ErrorHandler = require('../utils/errorHandler');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const slugify = require('slugify');
@@ -32,16 +33,43 @@ exports.getItem = catchAsyncErrors(async (req, res, next) => {
 
 // Get items belonging to a restaurant by restaurant id => /api/v1/restaurant/items/:id
 exports.getRestaurantItems = catchAsyncErrors(async (req, res, next) => {
-    // This function must be build under 11 add restaurant item DB handling
-});
+    const restaurant = await Restaurant.findById(req.params.id).select('+items')
+    .populate({
+        path: 'items',
+        select: 'name description price category'
+    });
 
-// Create a new item => /api/v1/item/new
-exports.newItem = catchAsyncErrors(async (req, res, next) => {
-    const item = await RestaurantItem.create(req.body);
+    if(!restaurant) {
+        return next(new ErrorHandler(`Restaurant with id: ${req.params.id} not found`));
+    }
 
     res.status(200).json({
         success: true,
-        message: 'Restaurant created',
+        data: restaurant.items
+    });
+});
+
+// Create a new item for restaurant with id => /api/v1/item/new/:id
+exports.newItem = catchAsyncErrors(async (req, res, next) => {
+    let restaurant = await Restaurant.findById(req.params.id);
+
+    if(!restaurant) {
+        return next(new ErrorHandler(`Restaurant with id: ${req.params.id} not found, item could not be created`));
+    }
+
+    req.body.owner = req.params.id;
+
+    const item = await RestaurantItem.create(req.body);
+
+    // Could check if the item is added by restaurant dataOwner to make sure that
+    //* item added to restaurant is done by the restaurant
+    // Could also make it so that when restaurant owner is logged in, restaurant id of the owner will be carried in req.user
+
+    restaurant = await Restaurant.findByIdAndUpdate(req.params.id, {$push: {items: item._id}});
+
+    res.status(200).json({
+        success: true,
+        message: `Item ${item.name} created for restaurant ${restaurant.name}`,
         data: item
     });
 });

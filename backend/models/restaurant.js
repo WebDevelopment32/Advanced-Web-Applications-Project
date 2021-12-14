@@ -86,6 +86,18 @@ const restaurantSchema = new mongoose.Schema({
     phoneNumber: { 
         // If a real product, this field would be a must
         type: Number
+    },
+
+    items: {
+        type: [mongoose.Schema.ObjectId],
+        ref: 'RestaurantItem',
+        select: false // Do not show items when asking for restaurant info
+    },
+
+    orders: {
+        type: [mongoose.Schema.ObjectId],
+        ref: 'Order',
+        select: false
     }
 });
 

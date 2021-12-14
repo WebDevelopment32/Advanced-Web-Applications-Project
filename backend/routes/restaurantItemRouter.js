@@ -8,7 +8,8 @@ const {
     getItem,
     uploadImage,
     updateItem,
-    deleteItem
+    deleteItem,
+    getRestaurantItems
 } = require('../controllers/restaurantItemController');
 
 // Authorization functions
@@ -19,8 +20,9 @@ const {
 
 router.route('/items').get(getItems);
 router.route('/item/:id').get(getItem);
+router.route('/restaurant/items/:id').get(getRestaurantItems);
 
-router.route('/item/new').post(isUserAuthenticated, isUserRoleAuthorized('user'), newItem);
+router.route('/item/new/:id').post(isUserAuthenticated, isUserRoleAuthorized('user'), newItem);
 router.route('/item/uploadimg/:id').put(isUserAuthenticated, isUserRoleAuthorized('user', 'operator'), uploadImage);
 router.route('/item/update/:id').put(isUserAuthenticated, isUserRoleAuthorized('user', 'operator'), updateItem);
 
