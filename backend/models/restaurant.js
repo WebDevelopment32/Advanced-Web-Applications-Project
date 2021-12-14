@@ -61,6 +61,12 @@ const restaurantSchema = new mongoose.Schema({
 
     slug: String,
 
+    dataOwner: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
+        required: true
+    },
+
     company: {
         // If a real product, this field would be a must
         type: String
