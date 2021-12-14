@@ -14,9 +14,10 @@ const {
     isUserRoleAuthorized
 } = require('../middlewares/authenticator');
 
-router.route('/users').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getAllUsers);
-router.route('/users/user').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getUsers);
-router.route('/users/operator').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getOperators);
-router.route('/user/:id').get(isUserAuthenticated, isUserRoleAuthorized('user', 'operator'), getUser);
+router.route('/users').get(getAllUsers);
+router.route('/user/:id').get(getUser);
+
+router.route('/operator/users/user').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getUsers);
+router.route('/operator/users/operator').get(isUserAuthenticated, isUserRoleAuthorized('operator'), getOperators);
 
 module.exports = router;
