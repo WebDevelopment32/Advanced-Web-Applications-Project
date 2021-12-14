@@ -1,0 +1,116 @@
+.cart-prage{
+    margin: 80px auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td img{
+    width: 150px;
+    height: 90px;
+    margin-right: 20px;
+    padding-left: 6px;
+}
+
+.cart-info{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: black;
+    background: rgb(192, 225, 255);
+    font-weight: bold;
+}
+
+.product {
+    padding-left: 25px;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td button {
+    font-family: 'Arial Rounded MT';
+    font-size: 15px;
+    color: brown;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+td button:hover {
+    color: red;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.hinta {
+    padding-right: 20px;
+}
+
+.total {
+    text-align: left;
+}
+
+.total-price table {
+    border-top: 2px solid rgb(192, 225, 255);
+    width: 100%;
+    max-width: 500px;
+}
+
+.loppusumma {
+    text-align: right;
+    padding-right: 20px;
+}
+
+th:last-child {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.confirmBtn {
+    margin-top: 20px;
+    position: absolute;
+    right: 18px;
+    font-family: 'Arial Rounded MT';
+    font-size: 25px;
+    color: #5394fd;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.confirmBtn:hover {
+    color: blue;
+}
+
+.declineBtn {
+    margin-top: 20px;
+    position: absolute;
+    right: 400px;
+    font-family: 'Arial Rounded MT';
+    font-size: 25px;
+    color: brown;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.declineBtn:hover {
+    color: red;
+}

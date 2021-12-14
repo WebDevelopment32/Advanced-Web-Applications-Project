@@ -1,23 +1,26 @@
 [
     {
-      "tuote1": "All in -ateria ja McFlurry",
-      "info1": "Big Mac™ Plus-ateria",
-      "info2": "4 kpl Chicken McNuggets™ -kanapaloja",
-      "info3": "+ dippi",
-      "info4": "sekä valitsemasi McFlurry™"
+      "tuote1": "All in -meal & McFlurry",
+      "info1": "Big Mac™ Plus-meal",
+      "info2": "4x Chicken McNuggets™",
+      "info3": "+ dipping sauce",
+      "info4": "+ McFlurry™",
+      "price": "12€"
     },
     {
-      "tuote1": "BigMac™ + Big Mac™ -ateria",
-      "info1": "2x BigMac™ -hampurilaista",
-      "info2": "normaalit ranskalaiset",
-      "info3": "0,4l virvoitusjuoma",
-      "info4": ""
+      "tuote1": "BigMac™ + Big Mac™ -meal",
+      "info1": "2x BigMac™ -hamburgers",
+      "info2": "normal size fries",
+      "info3": "0,4l soft drink",
+      "info4": "",
+      "price": "14€"
     },
     {
-      "tuote1": "Big Mac Plus-ateria ja Tuplajuusto",
-      "info1": "Big Mac™ hampurilainen",
-      "info2": "Isot ranskalaiset",
-      "info3": "Iso virvoitusjuoma",
-      "info4": "Tuplajuusto hampurilainen"
+      "tuote1": "Big Mac Plus-meal & Double cheeseburger ",
+      "info1": "Big Mac™ hamburger",
+      "info2": "Large fries",
+      "info3": "Big soft drink",
+      "info4": "Double cheeseburger",
+      "price": "13€"
     }
-]
+  ]

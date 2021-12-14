@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-export default function ContactDetailView(props) {
+export default function ContactDetailViewHS(props) {
 
     function Tilaus() {
         alert('Product added to cart successfully')
@@ -10,8 +10,8 @@ export default function ContactDetailView(props) {
     const result = useParams();
     console.log(result);
 
-    const contact = props.contacts.find(contact => contact.id === result.contactId);
-    if(contact == null) {
+    const contactHS = props.contactsHS.find(contactHS => contactHS.id === result.contactIdHS);
+    if(contactHS == null) {
         return <div>No contact found</div>
     }
 
@@ -19,19 +19,19 @@ export default function ContactDetailView(props) {
         <div>
             <table className="tuoteInfo">
                 <tr>
-                    <td>{contact.info1}</td>
+                    <td>{contactHS.info1}</td>
                 </tr>
                 <tr>
-                    <td>{contact.info2}</td>
+                    <td>{contactHS.info2}</td>
                 </tr>
                 <tr>
-                    <td>{contact.info3}</td>
+                    <td>{contactHS.info3}</td>
                 </tr>
                 <tr>
-                    <td>{contact.info4}</td>
+                    <td>{contactHS.info4}</td>
                 </tr>
                 <tr>
-                    <td className="price">{contact.price}</td>
+                    <td className="price">{contactHS.price}</td>
                 </tr>
                 <button class="plus">+</button>
                 <input class="quantityScreen" type="number"></input>
