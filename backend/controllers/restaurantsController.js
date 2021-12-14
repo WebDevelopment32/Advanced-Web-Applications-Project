@@ -25,8 +25,6 @@ exports.getRestaurants = catchAsyncErrors(async (req, res, next) => {
 exports.getRestaurant = catchAsyncErrors(async (req, res, next) => {
     const restaurantGet = await Restaurant.findById(req.params.id);
 
-    console.log(restaurantGet)
-
     if(!restaurantGet) {
         return next(new ErrorHandler(`Restaurant by id: ${req.params.id} not found!`, 404));
     }

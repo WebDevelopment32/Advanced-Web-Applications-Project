@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Restaurant = require('../models/restaurant');
 const catchAsyncErrors = require('../middlewares/catchAsyncErrors');
 const ErrorHandler = require('../utils/errorHandler');
 
@@ -66,6 +67,36 @@ exports.getLoggedUser = catchAsyncErrors(async (req, res, next) => {
     });
 });
 
+// Get restaurants owned by owner => /api/v1/user/restaurants
+exports.getRestaurantOwned = catchAsyncErrors(async (req, res, next) => {
+    const restaurants = await Restaurant.find({dataOwner: req.user.id});
+
+    if(!restaurants) {
+        return next(new ErrorHandler('Could not found restaurants owned by the user'));
+    }
+
+    res.status(200).json({
+        success: true,
+        results: restaurants.length,
+        data: restaurants
+    });
+});
+
+// Get restaurants owned by owner id => /api/v1/operator/user/:id/restaurants
+exports.getRestaurantOwnedAdmin = catchAsyncErrors(async (req, res, next) => {
+    const restaurants = await Restaurant.find({dataOwner: req.params.id});
+
+    if(!restaurants) {
+        return next(new ErrorHandler('Could not found restaurants owned by the user'));
+    }
+
+    res.status(200).json({
+        success: true,
+        results: restaurants.length,
+        data: restaurants
+    });
+});
+
 // Update logged in user info => /api/v1/user/update
 exports.updateUser = catchAsyncErrors(async (req, res, next) => {
     if(req.body.password) {
@@ -74,7 +105,7 @@ exports.updateUser = catchAsyncErrors(async (req, res, next) => {
 
     const user = await User.findByIdAndUpdate(req.user.id, req.body, {
         new: true,
-        runValidators: false // Do not run validation for password
+        runValidators: true
     });
 
     if(!user) {
