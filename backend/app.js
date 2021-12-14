@@ -11,19 +11,18 @@ const connectDatabase = require('./config/database');
 const errorMiddleware = require('./middlewares/errors');
 const ErrorHandler = require('./utils/errorHandler');
 const fileUpload = require('express-fileupload');
+const cookieParser = require('cookie-parser');
 
 // Setting up config.env variables
 dotenv.config({path: './config/config.env'});
 
-/*
 // Handling uncought exception on event of it
 process.on('uncaughtException', err => {
-    console.log(`ERROR: ${err.message}`);
+    console.log(`ERROR: ${err.stack}`);
     // This is a developer caused error when the developer has made an programming mistake with not existing resourses
     console.log('Shutting down due to uncaught exception');
     process.exit(1);
 });
-*/
 
 // Connecting to database
 connectDatabase();
@@ -34,9 +33,13 @@ app.use(fileUpload());
 // Setup body parser
 app.use(express.json());
 
+// Setup cookie parser
+app.use(cookieParser());
+
 // Importing routes
 const restaurants = require('./routes/restaurantRouter');
 const restaurantItem = require('./routes/restaurantItemRouter');
+const user = require('./routes/userLoginRouter');
 
 // For all routes, /api/v1/ will be added as middleware
 // Used to save olf http calls and make old data safe
@@ -44,6 +47,8 @@ const restaurantItem = require('./routes/restaurantItemRouter');
 // When changes are made to sertain route, it should become V2
 app.use('/api/v1/', restaurants);
 app.use('/api/v1/', restaurantItem);
+app.use('/api/v1/', user);
+
 
 // Handle unhandled routes in all routes
 app.all('*',  (req, res, next) => {

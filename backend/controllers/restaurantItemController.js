@@ -53,13 +53,12 @@ exports.uploadImage = catchAsyncErrors(async (req, res, next) => {
     }
 
     const supportedFileTypes = /.png|.jpeg/;
+    const fileType = req.files.image.mimetype;
     if(!supportedFileTypes.test(req.files.image.mimetype)) {
-        return next(new ErrorHandler(`File type ${req.files.image.mimetype} is not supported. Please upload image as png or jpeg`));
+        return next(new ErrorHandler(`File type ${fileType.split('/')[1]} is not supported. Please upload image as png or jpeg`));
     }
 
     req.body.image = req.files.image;
-
-    console.log(req.body.image)
 
     const item = await RestaurantItem.findByIdAndUpdate(req.params.id, req.body, {
         new: true,

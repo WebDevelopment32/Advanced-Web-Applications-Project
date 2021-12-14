@@ -39,6 +39,7 @@ exports.getRestaurant = catchAsyncErrors(async (req, res, next) => {
 
 // Create a new restaurant => /api/v1/restaurant/new
 exports.newRestaurant = catchAsyncErrors(async (req, res, next) => {
+    req.body.dataOwner = req.user.id;
     const restaurantNew = await Restaurant.create(req.body);
 
     res.status(200).json({
@@ -57,8 +58,9 @@ exports.uploadImage = catchAsyncErrors(async (req, res, next) => {
 
     const supportedFileTypes = /.png|.jpeg/;
     // Check if image file type is supported
+    const fileType = req.files.image.mimetype;
     if(!supportedFileTypes.test(req.files.image.mimetype)) {
-        return next(new ErrorHandler(`File type ${req.files.image.mimetype} is not supported. Please upload image as png or jpeg`));
+        return next(new ErrorHandler(`File type ${fileType.split('/')[1]} is not supported. Please upload image as png or jpeg`));
     }
 
     req.body.image = req.files.image;
@@ -80,19 +82,25 @@ exports.uploadImage = catchAsyncErrors(async (req, res, next) => {
 
 // Update a restaurant by id => /api/v1/restaurant/update/:id
 exports.updateRestaurant = catchAsyncErrors(async (req, res, next) => {
+    let restaurantGet = await Restaurant.findById(req.params.id);
+
+    if(!restaurantGet) {
+        return next(new ErrorHandler(`Restaurant by id: ${req.params.id} not found!`, 404));
+    }
+
+    if(req.user.id !== restaurantGet.dataOwner.toString() || req.user.role !== 'admin') {
+        return next(new ErrorHandler('Only restaurant owner or admin can delete this item'));
+    }
+
     // Create a new slug if the restaurant name is being updated
     if(req.body.name) {
         req.body.slug = slugify(req.body.name, {lower: true});
     }
 
-    const restaurantGet = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {
+    restaurantGet = await Restaurant.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
         runValidators: true
     }).select('-image.data');
-
-    if(!restaurantGet) {
-        return next(new ErrorHandler(`Restaurant by id: ${req.params.id} not found!`, 404));
-    }
 
     res.status(200).json({
         success: true,
@@ -102,11 +110,19 @@ exports.updateRestaurant = catchAsyncErrors(async (req, res, next) => {
 
 // Delete a job by id => /api/v1/restaurant/delete/:id
 exports.deleteRestaurant = catchAsyncErrors(async (req, res, next) => {
-    const restaurantDelete = await Restaurant.findByIdAndDelete(req.params.id);
+    let restaurantDelete = await Restaurant.findById(req.params.id);
 
     if(!restaurantDelete) {
         return next(new ErrorHandler(`Restaurant to delete by id: ${req.params.id} not found!`, 404));
     }
+
+    console.log(req.user.role)
+
+    if(req.user.id !== restaurantDelete.dataOwner.toString() && req.user.role !== 'admin') {
+        return next(new ErrorHandler('Only restaurant owner or admin can delete this item'));
+    }
+
+    restaurantDelete = await Restaurant.findByIdAndDelete(req.params.id);
 
     res.status(200).json({
         success: true,
