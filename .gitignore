@@ -5,6 +5,17 @@
 /.pnp
 .pnp.js
 
+<<<<<<< HEAD
+=======
+# NodeJS specific #
+.nyc_output/
+coverage/
+node_modules/
+npm-debug.log
+package-lock.json
+test/*.log
+
+>>>>>>> a5c618f597acd21a2a54b8bddb4033593263d6f9
 # testing
 /coverage
 
