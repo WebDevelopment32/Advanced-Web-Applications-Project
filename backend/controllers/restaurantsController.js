@@ -114,8 +114,6 @@ exports.deleteRestaurant = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler(`Restaurant to delete by id: ${req.params.id} not found!`, 404));
     }
 
-    console.log(req.user.role)
-
     if(req.user.id !== restaurantDelete.dataOwner.toString() && req.user.role !== 'admin') {
         return next(new ErrorHandler('Only restaurant owner or admin can delete this item'));
     }

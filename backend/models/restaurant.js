@@ -92,6 +92,12 @@ const restaurantSchema = new mongoose.Schema({
         type: [mongoose.Schema.ObjectId],
         ref: 'RestaurantItem',
         select: false // Do not show items when asking for restaurant info
+    },
+
+    orders: {
+        type: [mongoose.Schema.ObjectId],
+        ref: 'Order',
+        select: false
     }
 });
 

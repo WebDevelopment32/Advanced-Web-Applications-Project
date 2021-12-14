@@ -41,6 +41,7 @@ const restaurants = require('./routes/restaurantRouter');
 const restaurantItem = require('./routes/restaurantItemRouter');
 const userLogin = require('./routes/userLoginRouter');
 const user = require('./routes/userRouter');
+const order = require('./routes/orderRouter');
 
 // For all routes, /api/v1/ will be added as middleware
 // Used to save olf http calls and make old data safe
@@ -50,6 +51,7 @@ app.use('/api/v1/', restaurants);
 app.use('/api/v1/', restaurantItem);
 app.use('/api/v1/', userLogin);
 app.use('/api/v1/', user);
+app.use('/api/v1/', order);
 
 
 // Handle unhandled routes in all routes

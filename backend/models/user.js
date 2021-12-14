@@ -23,6 +23,12 @@ const userSchema = mongoose.Schema({
             message: 'You must choose user role (user, operator)'
         },
         default: 'user'
+    },
+
+    order: {
+        type: [mongoose.Schema.ObjectId],
+        ref: 'Order',
+        select: false
     }
 });
 

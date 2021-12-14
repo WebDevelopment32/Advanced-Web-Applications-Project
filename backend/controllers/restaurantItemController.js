@@ -57,6 +57,8 @@ exports.newItem = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler(`Restaurant with id: ${req.params.id} not found, item could not be created`));
     }
 
+    req.body.owner = req.params.id;
+
     const item = await RestaurantItem.create(req.body);
 
     // Could check if the item is added by restaurant dataOwner to make sure that
